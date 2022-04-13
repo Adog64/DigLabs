@@ -1,62 +1,47 @@
 |pinball
-KEY[0] => score[0].CLK
-KEY[0] => score[1].CLK
-KEY[0] => score[2].CLK
-KEY[0] => score[3].CLK
-KEY[0] => score[4].CLK
-KEY[0] => score[5].CLK
-KEY[0] => score[6].CLK
-KEY[0] => score[7].CLK
-KEY[0] => score[8].CLK
-KEY[0] => score[9].CLK
-KEY[0] => score[10].CLK
-KEY[0] => score[11].CLK
-KEY[0] => score[12].CLK
-KEY[0] => score[13].CLK
-KEY[0] => score[14].CLK
-KEY[0] => score[15].CLK
-KEY[1] => ~NO_FANOUT~
-MAX10_CLK1_50 => MAX10_CLK1_50.IN5
-HEX0[0] << dec_to_7_seg:comb_7.segs
-HEX0[1] << dec_to_7_seg:comb_7.segs
-HEX0[2] << dec_to_7_seg:comb_7.segs
-HEX0[3] << dec_to_7_seg:comb_7.segs
-HEX0[4] << dec_to_7_seg:comb_7.segs
-HEX0[5] << dec_to_7_seg:comb_7.segs
-HEX0[6] << dec_to_7_seg:comb_7.segs
-HEX0[7] << dec_to_7_seg:comb_7.segs
-HEX1[0] << dec_to_7_seg:comb_6.segs
-HEX1[1] << dec_to_7_seg:comb_6.segs
-HEX1[2] << dec_to_7_seg:comb_6.segs
-HEX1[3] << dec_to_7_seg:comb_6.segs
-HEX1[4] << dec_to_7_seg:comb_6.segs
-HEX1[5] << dec_to_7_seg:comb_6.segs
-HEX1[6] << dec_to_7_seg:comb_6.segs
-HEX1[7] << dec_to_7_seg:comb_6.segs
-HEX2[0] << dec_to_7_seg:comb_5.segs
-HEX2[1] << dec_to_7_seg:comb_5.segs
-HEX2[2] << dec_to_7_seg:comb_5.segs
-HEX2[3] << dec_to_7_seg:comb_5.segs
-HEX2[4] << dec_to_7_seg:comb_5.segs
-HEX2[5] << dec_to_7_seg:comb_5.segs
-HEX2[6] << dec_to_7_seg:comb_5.segs
-HEX2[7] << dec_to_7_seg:comb_5.segs
-HEX3[0] << dec_to_7_seg:comb_4.segs
-HEX3[1] << dec_to_7_seg:comb_4.segs
-HEX3[2] << dec_to_7_seg:comb_4.segs
-HEX3[3] << dec_to_7_seg:comb_4.segs
-HEX3[4] << dec_to_7_seg:comb_4.segs
-HEX3[5] << dec_to_7_seg:comb_4.segs
-HEX3[6] << dec_to_7_seg:comb_4.segs
-HEX3[7] << dec_to_7_seg:comb_4.segs
-HEX4[0] << dec_to_7_seg:comb_3.segs
-HEX4[1] << dec_to_7_seg:comb_3.segs
-HEX4[2] << dec_to_7_seg:comb_3.segs
-HEX4[3] << dec_to_7_seg:comb_3.segs
-HEX4[4] << dec_to_7_seg:comb_3.segs
-HEX4[5] << dec_to_7_seg:comb_3.segs
-HEX4[6] << dec_to_7_seg:comb_3.segs
-HEX4[7] << dec_to_7_seg:comb_3.segs
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+MAX10_CLK1_50 => MAX10_CLK1_50.IN7
+HEX0[0] <= dec_to_7_seg:comb_7.segs
+HEX0[1] <= dec_to_7_seg:comb_7.segs
+HEX0[2] <= dec_to_7_seg:comb_7.segs
+HEX0[3] <= dec_to_7_seg:comb_7.segs
+HEX0[4] <= dec_to_7_seg:comb_7.segs
+HEX0[5] <= dec_to_7_seg:comb_7.segs
+HEX0[6] <= dec_to_7_seg:comb_7.segs
+HEX0[7] <= dec_to_7_seg:comb_7.segs
+HEX1[0] <= dec_to_7_seg:comb_6.segs
+HEX1[1] <= dec_to_7_seg:comb_6.segs
+HEX1[2] <= dec_to_7_seg:comb_6.segs
+HEX1[3] <= dec_to_7_seg:comb_6.segs
+HEX1[4] <= dec_to_7_seg:comb_6.segs
+HEX1[5] <= dec_to_7_seg:comb_6.segs
+HEX1[6] <= dec_to_7_seg:comb_6.segs
+HEX1[7] <= dec_to_7_seg:comb_6.segs
+HEX2[0] <= dec_to_7_seg:comb_5.segs
+HEX2[1] <= dec_to_7_seg:comb_5.segs
+HEX2[2] <= dec_to_7_seg:comb_5.segs
+HEX2[3] <= dec_to_7_seg:comb_5.segs
+HEX2[4] <= dec_to_7_seg:comb_5.segs
+HEX2[5] <= dec_to_7_seg:comb_5.segs
+HEX2[6] <= dec_to_7_seg:comb_5.segs
+HEX2[7] <= dec_to_7_seg:comb_5.segs
+HEX3[0] <= dec_to_7_seg:comb_4.segs
+HEX3[1] <= dec_to_7_seg:comb_4.segs
+HEX3[2] <= dec_to_7_seg:comb_4.segs
+HEX3[3] <= dec_to_7_seg:comb_4.segs
+HEX3[4] <= dec_to_7_seg:comb_4.segs
+HEX3[5] <= dec_to_7_seg:comb_4.segs
+HEX3[6] <= dec_to_7_seg:comb_4.segs
+HEX3[7] <= dec_to_7_seg:comb_4.segs
+HEX4[0] <= dec_to_7_seg:comb_3.segs
+HEX4[1] <= dec_to_7_seg:comb_3.segs
+HEX4[2] <= dec_to_7_seg:comb_3.segs
+HEX4[3] <= dec_to_7_seg:comb_3.segs
+HEX4[4] <= dec_to_7_seg:comb_3.segs
+HEX4[5] <= dec_to_7_seg:comb_3.segs
+HEX4[6] <= dec_to_7_seg:comb_3.segs
+HEX4[7] <= dec_to_7_seg:comb_3.segs
 
 
 |pinball|BCD:score_con
@@ -376,5 +361,21 @@ segs[4] <= segs[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
 segs[5] <= segs[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
 segs[6] <= segs[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
 segs[7] <= segs[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pinball|re_monostable:inc_pulser
+clk => clicked.CLK
+clk => tick~reg0.CLK
+btn => always0.IN1
+btn => always0.IN1
+tick <= tick~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pinball|re_monostable:reset_pulser
+clk => clicked.CLK
+clk => tick~reg0.CLK
+btn => always0.IN1
+btn => always0.IN1
+tick <= tick~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

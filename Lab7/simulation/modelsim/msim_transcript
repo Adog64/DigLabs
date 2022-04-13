@@ -1,0 +1,66 @@
+# Reading pref.tcl
+# do Stopwatch_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Aidan/Documents/DigLabs/Lab7 {C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:40:30 on Apr 13,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Aidan/Documents/DigLabs/Lab7" C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v 
+# -- Compiling module stopwatch
+# -- Compiling module dec_to_7_seg
+# -- Compiling module t_flip_flop
+# 
+# Top level modules:
+# 	stopwatch
+# End time: 10:40:30 on Apr 13,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Aidan/Documents/DigLabs/Lab7 {C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:40:30 on Apr 13,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Aidan/Documents/DigLabs/Lab7" C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch_tb.v 
+# -- Compiling module stopwatch_tb
+# 
+# Top level modules:
+# 	stopwatch_tb
+# End time: 10:40:30 on Apr 13,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  stopwatch_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" stopwatch_tb 
+# Start time: 10:40:30 on Apr 13,2022
+# Loading work.stopwatch_tb
+# Loading work.stopwatch
+# Loading work.dec_to_7_seg
+# Loading work.t_flip_flop
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'dot'. The port definition is at: C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v(57).
+#    Time: 0 ps  Iteration: 0  Instance: /stopwatch_tb/st/hundreths File: C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v Line: 12
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'dot'. The port definition is at: C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v(57).
+#    Time: 0 ps  Iteration: 0  Instance: /stopwatch_tb/st/tenths File: C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'dot'. The port definition is at: C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v(57).
+#    Time: 0 ps  Iteration: 0  Instance: /stopwatch_tb/st/ones File: C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'dot'. The port definition is at: C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v(57).
+#    Time: 0 ps  Iteration: 0  Instance: /stopwatch_tb/st/tens File: C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v Line: 15
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'toggle_run'.  Expected 4, found 3.
+#    Time: 0 ps  Iteration: 0  Instance: /stopwatch_tb/st/toggle_run File: C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v Line: 17
+# ** Warning: (vsim-3722) C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch.v(17): [TFMPC] - Missing connection for port 'rst'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch_tb.v(29)
+#    Time: 159 ns  Iteration: 0  Instance: /stopwatch_tb
+# Break in Module stopwatch_tb at C:/Users/Aidan/Documents/DigLabs/Lab7/stopwatch_tb.v line 29
+# End time: 10:44:07 on Apr 13,2022, Elapsed time: 0:03:37
+# Errors: 0, Warnings: 6

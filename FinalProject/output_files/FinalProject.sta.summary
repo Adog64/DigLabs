@@ -3,75 +3,135 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'score[10]'
-Slack : -16.328
-TNS   : -339.556
+Slack : -14.018
+TNS   : -303.837
 
-Type  : Slow 1200mV 85C Model Setup 'KEY[0]'
-Slack : -2.584
-TNS   : -36.171
+Type  : Slow 1200mV 85C Model Setup 're_monostable:inc_pulser|tick'
+Slack : -3.402
+TNS   : -41.476
 
-Type  : Slow 1200mV 85C Model Hold 'score[10]'
-Slack : 0.089
+Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK1_50'
+Slack : 0.233
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'KEY[0]'
-Slack : 0.570
+Type  : Slow 1200mV 85C Model Hold 'score[10]'
+Slack : -0.245
+TNS   : -1.234
+
+Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK1_50'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 're_monostable:inc_pulser|tick'
+Slack : 0.862
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 're_monostable:inc_pulser|tick'
+Slack : -4.184
+TNS   : -54.917
+
+Type  : Slow 1200mV 85C Model Removal 're_monostable:inc_pulser|tick'
+Slack : 3.411
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'score[10]'
-Slack : -3.810
-TNS   : -1958.562
+Slack : -4.837
+TNS   : -2241.387
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[0]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MAX10_CLK1_50'
 Slack : -3.000
-TNS   : -20.108
+TNS   : -7.888
 
-Type  : Slow 1200mV 0C Model Setup 'score[10]'
-Slack : -14.992
-TNS   : -311.958
-
-Type  : Slow 1200mV 0C Model Setup 'KEY[0]'
-Slack : -2.280
-TNS   : -31.916
-
-Type  : Slow 1200mV 0C Model Hold 'score[10]'
-Slack : 0.204
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 're_monostable:inc_pulser|tick'
+Slack : 0.389
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'KEY[0]'
-Slack : 0.534
+Type  : Slow 1200mV 0C Model Setup 'score[10]'
+Slack : -12.600
+TNS   : -274.722
+
+Type  : Slow 1200mV 0C Model Setup 're_monostable:inc_pulser|tick'
+Slack : -2.987
+TNS   : -36.465
+
+Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK1_50'
+Slack : 0.295
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'score[10]'
+Slack : -0.168
+TNS   : -0.637
+
+Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 0.330
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 're_monostable:inc_pulser|tick'
+Slack : 0.811
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 're_monostable:inc_pulser|tick'
+Slack : -3.782
+TNS   : -49.787
+
+Type  : Slow 1200mV 0C Model Removal 're_monostable:inc_pulser|tick'
+Slack : 3.206
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'score[10]'
-Slack : -3.251
-TNS   : -1688.406
+Slack : -4.218
+TNS   : -1969.756
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
 Slack : -3.000
-TNS   : -20.108
+TNS   : -7.888
 
-Type  : Fast 1200mV 0C Model Setup 'score[10]'
-Slack : -7.863
-TNS   : -163.033
-
-Type  : Fast 1200mV 0C Model Setup 'KEY[0]'
-Slack : -0.927
-TNS   : -10.384
-
-Type  : Fast 1200mV 0C Model Hold 'score[10]'
-Slack : -0.157
-TNS   : -0.570
-
-Type  : Fast 1200mV 0C Model Hold 'KEY[0]'
-Slack : 0.258
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 're_monostable:inc_pulser|tick'
+Slack : 0.396
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
+Type  : Fast 1200mV 0C Model Setup 'score[10]'
+Slack : -6.960
+TNS   : -150.301
+
+Type  : Fast 1200mV 0C Model Setup 're_monostable:inc_pulser|tick'
+Slack : -1.114
+TNS   : -12.388
+
+Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK1_50'
+Slack : 0.641
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'score[10]'
+Slack : -0.308
+TNS   : -4.046
+
+Type  : Fast 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 0.164
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 're_monostable:inc_pulser|tick'
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 're_monostable:inc_pulser|tick'
+Slack : -1.842
+TNS   : -23.809
+
+Type  : Fast 1200mV 0C Model Removal 're_monostable:inc_pulser|tick'
+Slack : 1.926
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
 Slack : -3.000
-TNS   : -22.054
+TNS   : -7.680
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'score[10]'
-Slack : -1.801
-TNS   : -665.183
+Slack : -2.340
+TNS   : -771.772
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 're_monostable:inc_pulser|tick'
+Slack : 0.427
+TNS   : 0.000
 
 ------------------------------------------------------------

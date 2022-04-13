@@ -1,0 +1,4 @@
+module counterTB();
+    reg 
+    Count0To9(clk, 0, 1, )
+endmodule

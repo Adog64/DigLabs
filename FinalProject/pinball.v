@@ -5,17 +5,32 @@ module pinball(input [1:0]KEY, input MAX10_CLK1_50, output [7:0]HEX0, output [7:
     wire [3:0]huns;
     wire [3:0]tens;
     wire [3:0]ones;
+
+    wire tick;
+    wire rst;
+
+    // convert score to BCD
     BCD score_con(.bin(score), .tth(tenthous), .tho(thous), .hun(huns), .ten(tens), .one(ones));
-    dec_to_7_seg(.clk(MAX10_CLK1_50), .dec(tenthous), .dot(0), .segs(HEX4));
-    dec_to_7_seg(.clk(MAX10_CLK1_50), .dec(thous), .dot(0), .segs(HEX3));
-    dec_to_7_seg(.clk(MAX10_CLK1_50), .dec(huns), .dot(0), .segs(HEX2));
-    dec_to_7_seg(.clk(MAX10_CLK1_50), .dec(tens), .dot(0), .segs(HEX1));
-    dec_to_7_seg(.clk(MAX10_CLK1_50), .dec(ones), .dot(0), .segs(HEX0));
+
+    // seven seg digit displays
+    dec_to_7_seg (.clk(MAX10_CLK1_50), .dec(tenthous), .dot(0), .segs(HEX4));
+    dec_to_7_seg (.clk(MAX10_CLK1_50), .dec(thous), .dot(0), .segs(HEX3));
+    dec_to_7_seg (.clk(MAX10_CLK1_50), .dec(huns), .dot(0), .segs(HEX2));
+    dec_to_7_seg (.clk(MAX10_CLK1_50), .dec(tens), .dot(0), .segs(HEX1));
+    dec_to_7_seg (.clk(MAX10_CLK1_50), .dec(ones), .dot(0), .segs(HEX0));
+
+    re_monostable inc_pulser (.clk(MAX10_CLK1_50), .btn(KEY[0]), .tick(tick));
+    re_monostable reset_pulser (.clk(MAX10_CLK1_50), .btn(KEY[1]), .tick(rst));
+
     always @(MAX10_CLK1_50) begin
-        if (score < 65536 - 100)
-            score = score + 100;
-        else
+        if (rst) begin
             score = 0;
+        end else if (tick) begin
+            if (score < 65536 - 100)
+                score = score + 100;
+            else
+                score = 0;
+        end
     end
 endmodule
 
@@ -100,5 +115,17 @@ module dec_to_7_seg(clk, dec, dot, segs);
         if (dot) begin
             segs[7] <= 0;
         end
+    end
+endmodule
+
+module re_monostable(input clk, input btn, output reg tick);
+    reg clicked = 0;
+    always @(posedge clk) begin
+        tick = 0;
+        if (btn & ~clicked) begin
+            clicked = 1;
+            tick = 1;
+        end else if (~btn & clicked)
+            clicked = 0;
     end
 endmodule

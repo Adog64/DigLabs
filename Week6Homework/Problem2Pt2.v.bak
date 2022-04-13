@@ -1,0 +1,122 @@
+// Design Homework Week 6 Problem 2
+// Russell Trafford
+// This module is used for _____ (you need to figure this out) and can connect to a 7-segment display
+
+module Problem2_binary (input clk,
+								input rst,
+								input inc,
+								input dec,
+								output [6:0] hexout);
+							
+	reg [6:0] value;
+	assign hexout = value;
+
+
+	reg [1:0] state;
+	local param[1:0] s0 = 2'b00,
+						  s1 = 2'b01,
+						  s2 = 2'b10,
+						  s3 = 2'b11;
+
+	always @ (posedge clk)
+	begin
+		if (rst)
+		begin
+			state <= 2'b00;
+			value <= 7'b1000000;
+		end
+		
+		else
+		begin
+			case(state)
+			2'b00:	begin
+						value <= 7'b1000000;
+						if (inc)
+							state <= 2'b01;
+						else if (dec)
+							state <= 2'b11;
+						else
+							state <= state;
+						end
+			2'b01:	begin
+						value <= 7'b1111001;
+						if (inc)
+							state <= 2'b10;
+						else if (dec)
+							state <= 2'b00;
+						else
+							state <= state;
+						end
+			2'b10:	begin
+						value <= 7'b0100100;
+						if (inc)
+							state <= 2'b11;
+						else if (dec)
+							state <= 2'b01;
+						else
+							state <= state;
+						end
+			2'b11:	begin
+						value <= 7'b0110000;
+						if (inc)
+							state <= 2'b00;
+						else if (dec)
+							state <= 2'b10;
+						else
+							state <= state;
+						end
+			endcase
+			
+		end
+
+	end
+
+endmodule
+
+
+
+
+	Testbench
+	// Design Problem Week 6 Problem 2 Testbench
+	// Russell Trafford
+	// This testbench will generate clk, rst, inc, and dec, while monitoring hexout
+
+module Problem2_binary_tb();
+
+	reg clk, rst, inc, dec;
+	wire [6:0] hexout;
+
+	Problem2_binary dut (clk, rst, inc, dec, hexout);
+
+	localparam CLK_PERIOD = 4;
+
+	//Generate Clock
+	always begin
+		clk = 0;
+		#(CLK_PERIOD / 4);
+		clk = 1;
+		#(CLK_PERIOD / 4);
+	end
+
+	initial begin
+		rst = 1;
+		inc = 0;
+		dec = 0;
+		#(CLK_PERIOD * 2) // Test the reset line
+		rst = 0;
+		#(CLK_PERIOD * 2) // Testing that system does not move forward
+		inc = 1;
+		#(CLK_PERIOD * 4) // See if we can cycle through the machine forwards
+		inc = 0;
+		dec = 1;
+		#(CLK_PERIOD * 4) // See if we can cycle through the machine backwards
+		inc = 1;
+		#(CLK_PERIOD * 2) // Move forward  states and then see if system stays still
+		inc = 0;
+		#(CLK_PERIOD * 2) // Check Reset from a non-zero state
+		rst = 1;
+		#(CLK_PERIOD * 2) 
+		$stop;
+	end
+endmodule
+

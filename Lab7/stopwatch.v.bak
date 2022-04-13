@@ -1,0 +1,55 @@
+module Stopwatch(input rst, input clk, input start, input stop, output tms, output hms, output s, output ts);
+    reg tick = 0;
+    reg state = 2'b00;
+    wire [4:0]rollover;
+    Count0To9 countTMS (clk, rst, tick, tms, rollover[0]);
+    Count0To9 countHMS (clk, rst, rollover[0], hms, rollover[1]);
+    Count0To9 countS (clk, rst, rollover[1], s, rollover[2]);
+    Count0To9 countTS (clk, rst, rollover[2], ts, rollover[3]);
+
+    always @(clk) begin
+        if (rst) begin
+            state = 2'b00; // go to init state
+        end else begin
+            case (state)
+                2'b00: begin // init state
+                    tick = 0;
+                    if (start) begin
+                        state = 2'b01; // go to start
+                    end else if (stop) begin
+                        state = 2'b00; // do nothing
+                    end
+                end
+                2'b01: begin // start state
+                    tick = 1;
+                    if (stop) begin
+                        state = 2'b10; // go to stop
+                    end
+                end
+                2'b10: begin // pause state
+                    tick = 0;
+                    if (start) begin
+                        state = 2'b01; // go to start                   
+                    end
+                end
+            endcase
+        end
+    end
+endmodule
+
+module Count0To9(input clk, input rst, input enable, output reg val, output reg rollover);
+    always @(clk) begin
+        if (rst) begin
+            val <= 4'b0;
+            rollover <= 0;
+        end else if (enable) begin
+            if (val < 9) begin // count up to 9
+                val <= val + 1;
+                rollover <= 0;
+            end else begin // reset to 0 and set rollover flag
+                val <= 0;
+                rollover <= 1;
+            end
+        end
+    end
+endmodule

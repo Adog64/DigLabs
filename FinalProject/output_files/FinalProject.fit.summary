@@ -1,14 +1,14 @@
-Fitter Status : Successful - Wed Apr 13 12:03:06 2022
+Fitter Status : Successful - Wed Apr 13 13:12:45 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : FinalProject
 Top-level Entity Name : pinball
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 212 / 49,760 ( < 1 % )
-    Total combinational functions : 212 / 49,760 ( < 1 % )
-    Dedicated logic registers : 14 / 49,760 ( < 1 % )
-Total registers : 14
+Total logic elements : 244 / 49,760 ( < 1 % )
+    Total combinational functions : 242 / 49,760 ( < 1 % )
+    Dedicated logic registers : 4 / 49,760 ( < 1 % )
+Total registers : 4
 Total pins : 43 / 360 ( 12 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )

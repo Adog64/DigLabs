@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FinalProject
-Wed Apr 13 12:05:52 2022
+Wed Apr 13 13:12:31 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,20 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "dec_to_7_seg:comb_7"
+ 11. Port Connectivity Checks: "dec_to_7_seg:comb_6"
+ 12. Port Connectivity Checks: "dec_to_7_seg:comb_5"
+ 13. Port Connectivity Checks: "dec_to_7_seg:comb_4"
+ 14. Port Connectivity Checks: "dec_to_7_seg:comb_3"
+ 15. Port Connectivity Checks: "BCD:score_con"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +50,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Apr 13 12:05:52 2022           ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 13 13:12:31 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; FinalProject                                ;
 ; Top-level Entity Name              ; pinball                                     ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 243                                         ;
+;     Total combinational functions  ; 241                                         ;
+;     Dedicated logic registers      ; 4                                           ;
+; Total registers                    ; 4                                           ;
+; Total pins                         ; 43                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -151,11 +164,230 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-6         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; pinball.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 243         ;
+;                                             ;             ;
+; Total combinational functions               ; 241         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 163         ;
+;     -- 3 input functions                    ; 46          ;
+;     -- <=2 input functions                  ; 32          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 228         ;
+;     -- arithmetic mode                      ; 13          ;
+;                                             ;             ;
+; Total registers                             ; 4           ;
+;     -- Dedicated logic registers            ; 4           ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 43          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; LessThan0~3 ;
+; Maximum fan-out                             ; 14          ;
+; Total fan-out                               ; 939         ;
+; Average fan-out                             ; 2.84        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                       ;
++---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                 ; Entity Name   ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+---------------+--------------+
+; |pinball                        ; 241 (46)            ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 43   ; 0            ; 0          ; |pinball                            ; pinball       ; work         ;
+;    |BCD:score_con|              ; 132 (132)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pinball|BCD:score_con              ; BCD           ; work         ;
+;    |dec_to_7_seg:comb_3|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pinball|dec_to_7_seg:comb_3        ; dec_to_7_seg  ; work         ;
+;    |dec_to_7_seg:comb_4|        ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pinball|dec_to_7_seg:comb_4        ; dec_to_7_seg  ; work         ;
+;    |dec_to_7_seg:comb_5|        ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pinball|dec_to_7_seg:comb_5        ; dec_to_7_seg  ; work         ;
+;    |dec_to_7_seg:comb_6|        ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pinball|dec_to_7_seg:comb_6        ; dec_to_7_seg  ; work         ;
+;    |dec_to_7_seg:comb_7|        ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pinball|dec_to_7_seg:comb_7        ; dec_to_7_seg  ; work         ;
+;    |re_monostable:inc_pulser|   ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pinball|re_monostable:inc_pulser   ; re_monostable ; work         ;
+;    |re_monostable:reset_pulser| ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pinball|re_monostable:reset_pulser ; re_monostable ; work         ;
++---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                          ;
++-----------------------------------------------------+-------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal           ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------+------------------------+
+; dec_to_7_seg:comb_7|segs[0]                         ; dec_to_7_seg:comb_7|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_7|segs[1]                         ; dec_to_7_seg:comb_7|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_7|segs[2]                         ; dec_to_7_seg:comb_7|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_7|segs[3]                         ; dec_to_7_seg:comb_7|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_7|segs[4]                         ; dec_to_7_seg:comb_7|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_7|segs[5]                         ; dec_to_7_seg:comb_7|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_7|segs[6]                         ; dec_to_7_seg:comb_7|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_6|segs[0]                         ; dec_to_7_seg:comb_6|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_6|segs[1]                         ; dec_to_7_seg:comb_6|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_6|segs[2]                         ; dec_to_7_seg:comb_6|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_6|segs[3]                         ; dec_to_7_seg:comb_6|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_6|segs[4]                         ; dec_to_7_seg:comb_6|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_6|segs[5]                         ; dec_to_7_seg:comb_6|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_6|segs[6]                         ; dec_to_7_seg:comb_6|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_5|segs[0]                         ; dec_to_7_seg:comb_5|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_5|segs[1]                         ; dec_to_7_seg:comb_5|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_5|segs[2]                         ; dec_to_7_seg:comb_5|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_5|segs[3]                         ; dec_to_7_seg:comb_5|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_5|segs[4]                         ; dec_to_7_seg:comb_5|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_5|segs[5]                         ; dec_to_7_seg:comb_5|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_5|segs[6]                         ; dec_to_7_seg:comb_5|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_4|segs[0]                         ; dec_to_7_seg:comb_4|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_4|segs[1]                         ; dec_to_7_seg:comb_4|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_4|segs[2]                         ; dec_to_7_seg:comb_4|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_4|segs[3]                         ; dec_to_7_seg:comb_4|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_4|segs[4]                         ; dec_to_7_seg:comb_4|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_4|segs[5]                         ; dec_to_7_seg:comb_4|Mux7      ; yes                    ;
+; dec_to_7_seg:comb_4|segs[6]                         ; dec_to_7_seg:comb_4|Mux7      ; yes                    ;
+; score[12]                                           ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[13]                                           ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[15]                                           ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[14]                                           ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[11]                                           ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[10]                                           ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[9]                                            ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[8]                                            ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[7]                                            ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[6]                                            ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[5]                                            ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[4]                                            ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[2]                                            ; re_monostable:inc_pulser|tick ; yes                    ;
+; score[3]                                            ; re_monostable:inc_pulser|tick ; yes                    ;
+; Number of user-specified and inferred latches = 42  ;                               ;                        ;
++-----------------------------------------------------+-------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 4     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec_to_7_seg:comb_7"                                                                                                                                                                 ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; dot     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; dot[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec_to_7_seg:comb_6"                                                                                                                                                                 ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; dot     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; dot[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec_to_7_seg:comb_5"                                                                                                                                                                 ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; dot     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; dot[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec_to_7_seg:comb_4"                                                                                                                                                                 ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; dot     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; dot[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec_to_7_seg:comb_3"                                                                                                                                                                 ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; dot     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; dot[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "BCD:score_con"   ;
++-----------+-------+----------+--------------+
+; Port      ; Type  ; Severity ; Details      ;
++-----------+-------+----------+--------------+
+; bin[1..0] ; Input ; Info     ; Stuck at GND ;
++-----------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 43                          ;
+; cycloneiii_ff         ; 4                           ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 243                         ;
+;     arith             ; 13                          ;
+;         2 data inputs ; 13                          ;
+;     normal            ; 230                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 46                          ;
+;         4 data inputs ; 163                         ;
+;                       ;                             ;
+; Max LUT depth         ; 16.00                       ;
+; Average LUT depth     ; 10.81                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -164,45 +396,148 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Apr 13 12:05:42 2022
+    Info: Processing started: Wed Apr 13 13:12:20 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FinalProject -c FinalProject
-Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Warning (12019): Can't analyze file -- file DE10_LITE_Golden_Top.v is missing
-Info (12021): Found 3 design units, including 3 entities, in source file pinball.v
+Info (12021): Found 4 design units, including 4 entities, in source file pinball.v
     Info (12023): Found entity 1: pinball File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 1
-    Info (12023): Found entity 2: BCD File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 26
-    Info (12023): Found entity 3: dec_to_7_seg File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 61
-Critical Warning (10846): Verilog HDL Instantiation warning at pinball.v(9): instance has no name File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 9
-Critical Warning (10846): Verilog HDL Instantiation warning at pinball.v(10): instance has no name File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 10
-Critical Warning (10846): Verilog HDL Instantiation warning at pinball.v(11): instance has no name File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 11
-Critical Warning (10846): Verilog HDL Instantiation warning at pinball.v(12): instance has no name File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 12
-Critical Warning (10846): Verilog HDL Instantiation warning at pinball.v(13): instance has no name File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 13
+    Info (12023): Found entity 2: BCD File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+    Info (12023): Found entity 3: dec_to_7_seg File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 76
+    Info (12023): Found entity 4: re_monostable File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 121
+Critical Warning (10846): Verilog HDL Instantiation warning at pinball.v(16): instance has no name File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 16
+Critical Warning (10846): Verilog HDL Instantiation warning at pinball.v(17): instance has no name File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at pinball.v(18): instance has no name File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 18
+Critical Warning (10846): Verilog HDL Instantiation warning at pinball.v(19): instance has no name File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 19
+Critical Warning (10846): Verilog HDL Instantiation warning at pinball.v(20): instance has no name File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
 Info (12127): Elaborating entity "pinball" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at pinball.v(16): truncated value with size 32 to match size of target (16) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 16
-Error (10028): Can't resolve multiple constant drivers for net "score[15]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10029): Constant driver at pinball.v(14) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 14
-Error (10028): Can't resolve multiple constant drivers for net "score[14]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[13]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[12]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[11]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[10]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[9]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[8]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[7]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[6]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[5]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[4]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[3]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[2]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[1]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (10028): Can't resolve multiple constant drivers for net "score[0]" at pinball.v(20) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 20
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 18 errors, 8 warnings
-    Error: Peak virtual memory: 4699 megabytes
-    Error: Processing ended: Wed Apr 13 12:05:52 2022
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:19
+Warning (10235): Verilog HDL Always Construct warning at pinball.v(26): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 26
+Warning (10235): Verilog HDL Always Construct warning at pinball.v(28): variable "tick" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Warning (10235): Verilog HDL Always Construct warning at pinball.v(29): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 29
+Warning (10235): Verilog HDL Always Construct warning at pinball.v(30): variable "score" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 30
+Warning (10230): Verilog HDL assignment warning at pinball.v(30): truncated value with size 32 to match size of target (16) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 30
+Warning (10240): Verilog HDL Always Construct warning at pinball.v(25): inferring latch(es) for variable "score", which holds its previous value in one or more paths through the always construct File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 25
+Info (10041): Inferred latch for "score[0]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[1]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[2]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[3]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[4]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[5]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[6]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[7]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[8]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[9]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[10]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[11]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[12]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[13]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[14]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (10041): Inferred latch for "score[15]" at pinball.v(28) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Info (12128): Elaborating entity "BCD" for hierarchy "BCD:score_con" File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 13
+Warning (10230): Verilog HDL assignment warning at pinball.v(59): truncated value with size 32 to match size of target (4) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 59
+Warning (10230): Verilog HDL assignment warning at pinball.v(57): truncated value with size 32 to match size of target (4) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 57
+Warning (10230): Verilog HDL assignment warning at pinball.v(55): truncated value with size 32 to match size of target (4) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 55
+Warning (10230): Verilog HDL assignment warning at pinball.v(53): truncated value with size 32 to match size of target (4) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 53
+Warning (10230): Verilog HDL assignment warning at pinball.v(51): truncated value with size 32 to match size of target (4) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 51
+Info (12128): Elaborating entity "dec_to_7_seg" for hierarchy "dec_to_7_seg:comb_3" File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 16
+Warning (10235): Verilog HDL Always Construct warning at pinball.v(83): variable "dec" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 83
+Warning (10270): Verilog HDL Case Statement warning at pinball.v(83): incomplete case statement has no default case item File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 83
+Warning (10235): Verilog HDL Always Construct warning at pinball.v(115): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 115
+Warning (10240): Verilog HDL Always Construct warning at pinball.v(82): inferring latch(es) for variable "segs", which holds its previous value in one or more paths through the always construct File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Info (10041): Inferred latch for "segs[0]" at pinball.v(82) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Info (10041): Inferred latch for "segs[1]" at pinball.v(82) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Info (10041): Inferred latch for "segs[2]" at pinball.v(82) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Info (10041): Inferred latch for "segs[3]" at pinball.v(82) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Info (10041): Inferred latch for "segs[4]" at pinball.v(82) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Info (10041): Inferred latch for "segs[5]" at pinball.v(82) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Info (10041): Inferred latch for "segs[6]" at pinball.v(82) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Info (10041): Inferred latch for "segs[7]" at pinball.v(82) File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Info (12128): Elaborating entity "re_monostable" for hierarchy "re_monostable:inc_pulser" File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 22
+Warning (14025): LATCH primitive "dec_to_7_seg:comb_7|segs[7]" is permanently disabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14025): LATCH primitive "dec_to_7_seg:comb_6|segs[7]" is permanently disabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14025): LATCH primitive "dec_to_7_seg:comb_5|segs[7]" is permanently disabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14025): LATCH primitive "dec_to_7_seg:comb_4|segs[7]" is permanently disabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14025): LATCH primitive "dec_to_7_seg:comb_3|segs[7]" is permanently disabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14026): LATCH primitive "dec_to_7_seg:comb_3|segs[0]" is permanently enabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14026): LATCH primitive "dec_to_7_seg:comb_3|segs[1]" is permanently enabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14026): LATCH primitive "dec_to_7_seg:comb_3|segs[2]" is permanently enabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14026): LATCH primitive "dec_to_7_seg:comb_3|segs[3]" is permanently enabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14026): LATCH primitive "dec_to_7_seg:comb_3|segs[4]" is permanently enabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14026): LATCH primitive "dec_to_7_seg:comb_3|segs[5]" is permanently enabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (14026): LATCH primitive "dec_to_7_seg:comb_3|segs[6]" is permanently enabled File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "dec_to_7_seg:comb_7|segs[3]" merged with LATCH primitive "dec_to_7_seg:comb_7|segs[0]" File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Info (13026): Duplicate LATCH primitive "dec_to_7_seg:comb_7|segs[4]" merged with LATCH primitive "dec_to_7_seg:comb_7|segs[0]" File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Info (13026): Duplicate LATCH primitive "dec_to_7_seg:comb_7|segs[5]" merged with LATCH primitive "dec_to_7_seg:comb_7|segs[2]" File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+Warning (13012): Latch dec_to_7_seg:comb_7|segs[0] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal score[2] File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Warning (13012): Latch dec_to_7_seg:comb_7|segs[1] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal score[2] File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Warning (13012): Latch dec_to_7_seg:comb_7|segs[2] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal score[2] File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Warning (13012): Latch dec_to_7_seg:comb_7|segs[6] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal score[2] File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 28
+Warning (13012): Latch dec_to_7_seg:comb_6|segs[0] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|ten[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_6|segs[1] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|ten[2]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_6|segs[2] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|ten[2]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_6|segs[3] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|ten[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_6|segs[4] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|ten[2]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_6|segs[5] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|ten[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_6|segs[6] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|ten[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_5|segs[0] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|hun[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_5|segs[1] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|hun[2]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_5|segs[2] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|hun[2]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_5|segs[3] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|hun[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_5|segs[4] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|hun[2]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_5|segs[5] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|hun[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_5|segs[6] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|hun[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_4|segs[0] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|tho[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_4|segs[1] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|tho[2]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_4|segs[2] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|tho[2]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_4|segs[3] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|tho[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_4|segs[4] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|tho[2]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_4|segs[5] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|tho[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13012): Latch dec_to_7_seg:comb_4|segs[6] has unsafe behavior File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 82
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal BCD:score_con|tho[1]~synth File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 38
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 1
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 1
+    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 1
+    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 1
+    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: C:/Users/Aidan/Documents/DigLabs/FinalProject/pinball.v Line: 1
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 286 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 40 output pins
+    Info (21061): Implemented 243 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 91 warnings
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Wed Apr 13 13:12:31 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:16
 
 
