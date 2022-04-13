@@ -1,0 +1,5 @@
+module Lab2 ()
+
+	DisplayDriver dd (SW[3:0], SW[9:8], HEX0[6:0], HEX1[6:0], HEX2[6:0], HEX3[6:0]);
+
+endmodule 

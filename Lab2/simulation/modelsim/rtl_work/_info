@@ -1,0 +1,136 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Aidan/Documents/DigLabs/Lab2/simulation/modelsim
+vDemux1x4To4x4
+Z1 !s110 1644442560
+!i10b 1
+!s100 _^Q?OGaHScOl<5BozzgLn1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I4VSN8QWA1534gTM]ZcMf;3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1644441676
+8C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Demux1x4To4x4.v
+FC:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Demux1x4To4x4.v
+!i122 3
+L0 1 17
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1644442560.000000
+!s107 C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Demux1x4To4x4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aidan/Documents/DigLabs/Lab2/output_files|C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Demux1x4To4x4.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+C:/Users/Aidan/Documents/DigLabs/Lab2/output_files
+Z8 tCvgOpt 0
+n@demux1x4@to4x4
+vDisplayDriver
+Z9 !s110 1644442559
+!i10b 1
+!s100 lm^`NXCiaDH9>_OTV>70;1
+R2
+Ig;MG3IcbZZ13ZH_V^_nf11
+R3
+R0
+w1644441664
+8C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/DisplayDriver.v
+FC:/Users/Aidan/Documents/DigLabs/Lab2/output_files/DisplayDriver.v
+!i122 1
+L0 1 16
+R4
+r1
+!s85 0
+31
+Z10 !s108 1644442559.000000
+!s107 C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/DisplayDriver.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aidan/Documents/DigLabs/Lab2/output_files|C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/DisplayDriver.v|
+!i113 1
+R6
+R7
+R8
+n@display@driver
+vHexTo7Seg
+R9
+!i10b 1
+!s100 Z;[@42zi>idFd1W1S39`X1
+R2
+IVWI[n_3_SImjL>JGdMeg72
+R3
+R0
+w1644442537
+8C:/Users/Aidan/Documents/DigLabs/Lab2/HexTo7Seg.v
+FC:/Users/Aidan/Documents/DigLabs/Lab2/HexTo7Seg.v
+!i122 0
+L0 1 22
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Aidan/Documents/DigLabs/Lab2/HexTo7Seg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aidan/Documents/DigLabs/Lab2|C:/Users/Aidan/Documents/DigLabs/Lab2/HexTo7Seg.v|
+!i113 1
+R6
+Z11 !s92 -vlog01compat -work work +incdir+C:/Users/Aidan/Documents/DigLabs/Lab2
+R8
+n@hex@to7@seg
+vLab2
+R1
+!i10b 1
+!s100 M5=obVChN0RP@JEO7a5J50
+R2
+I;mOi0K4hW<PkgJz0>3]DJ1
+R3
+R0
+w1644441256
+8C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Lab2.v
+FC:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Lab2.v
+!i122 2
+L0 1 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Lab2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aidan/Documents/DigLabs/Lab2/output_files|C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Lab2.v|
+!i113 1
+R6
+R7
+R8
+n@lab2
+vSevenSegTB
+R1
+!i10b 1
+!s100 ]PTIa?Kb<ff@jTQDPaG?Z2
+R2
+I0bHUEL`@Vo:P3BU]YEQba0
+R3
+R0
+w1644438027
+8C:/Users/Aidan/Documents/DigLabs/Lab2/SevenSegTB.v
+FC:/Users/Aidan/Documents/DigLabs/Lab2/SevenSegTB.v
+!i122 4
+L0 1 18
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Aidan/Documents/DigLabs/Lab2/SevenSegTB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aidan/Documents/DigLabs/Lab2|C:/Users/Aidan/Documents/DigLabs/Lab2/SevenSegTB.v|
+!i113 1
+R6
+R11
+R8
+n@seven@seg@t@b

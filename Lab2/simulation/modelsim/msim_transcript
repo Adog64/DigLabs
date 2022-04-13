@@ -1,0 +1,81 @@
+# Reading pref.tcl
+# do Lab2_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Aidan/Documents/DigLabs/Lab2 {C:/Users/Aidan/Documents/DigLabs/Lab2/HexTo7Seg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:35:59 on Feb 09,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Aidan/Documents/DigLabs/Lab2" C:/Users/Aidan/Documents/DigLabs/Lab2/HexTo7Seg.v 
+# -- Compiling module HexTo7Seg
+# 
+# Top level modules:
+# 	HexTo7Seg
+# End time: 16:35:59 on Feb 09,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/Aidan/Documents/DigLabs/Lab2/output_files {C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/DisplayDriver.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:35:59 on Feb 09,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Aidan/Documents/DigLabs/Lab2/output_files" C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/DisplayDriver.v 
+# -- Compiling module DisplayDriver
+# 
+# Top level modules:
+# 	DisplayDriver
+# End time: 16:35:59 on Feb 09,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/Aidan/Documents/DigLabs/Lab2/output_files {C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Lab2.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:36:00 on Feb 09,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Aidan/Documents/DigLabs/Lab2/output_files" C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Lab2.v 
+# -- Compiling module Lab2
+# 
+# Top level modules:
+# 	Lab2
+# End time: 16:36:00 on Feb 09,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/Aidan/Documents/DigLabs/Lab2/output_files {C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Demux1x4To4x4.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:36:00 on Feb 09,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Aidan/Documents/DigLabs/Lab2/output_files" C:/Users/Aidan/Documents/DigLabs/Lab2/output_files/Demux1x4To4x4.v 
+# -- Compiling module Demux1x4To4x4
+# 
+# Top level modules:
+# 	Demux1x4To4x4
+# End time: 16:36:00 on Feb 09,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Aidan/Documents/DigLabs/Lab2 {C:/Users/Aidan/Documents/DigLabs/Lab2/SevenSegTB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:36:00 on Feb 09,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Aidan/Documents/DigLabs/Lab2" C:/Users/Aidan/Documents/DigLabs/Lab2/SevenSegTB.v 
+# -- Compiling module SevenSegTB
+# 
+# Top level modules:
+# 	SevenSegTB
+# End time: 16:36:00 on Feb 09,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  SevenSegTB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" SevenSegTB 
+# Start time: 16:36:00 on Feb 09,2022
+# Loading work.SevenSegTB
+# Loading work.HexTo7Seg
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : C:/Users/Aidan/Documents/DigLabs/Lab2/SevenSegTB.v(16)
+#    Time: 160 ps  Iteration: 0  Instance: /SevenSegTB
+# Break in Module SevenSegTB at C:/Users/Aidan/Documents/DigLabs/Lab2/SevenSegTB.v line 16
+# End time: 16:51:45 on Feb 09,2022, Elapsed time: 0:15:45
+# Errors: 0, Warnings: 0

@@ -1,0 +1,121 @@
+|Lab1
+HEXOUT[0] <= inst1[0].DB_MAX_OUTPUT_PORT_TYPE
+HEXOUT[1] <= inst1[1].DB_MAX_OUTPUT_PORT_TYPE
+HEXOUT[2] <= inst1[2].DB_MAX_OUTPUT_PORT_TYPE
+HEXOUT[3] <= inst1[3].DB_MAX_OUTPUT_PORT_TYPE
+HEXOUT[4] <= inst1[4].DB_MAX_OUTPUT_PORT_TYPE
+HEXOUT[5] <= inst1[5].DB_MAX_OUTPUT_PORT_TYPE
+HEXOUT[6] <= inst1[6].DB_MAX_OUTPUT_PORT_TYPE
+b3 => BCD_7SEG:inst.b3
+b2 => BCD_7SEG:inst.b2
+b1 => BCD_7SEG:inst.b1
+b0 => BCD_7SEG:inst.b0
+
+
+|Lab1|BCD_7SEG:inst
+HEXOUT[0] <= BCD_7Seg_A:inst.Seg-A
+HEXOUT[1] <= BCD_7SEG_B:inst2.SEG-B
+HEXOUT[2] <= BCD_7Seg_C:inst1.Seg-C
+HEXOUT[3] <= BCD_7SEG_D:inst8.SEG_D
+HEXOUT[4] <= BCD_7SEG_E:inst3.SEGE
+HEXOUT[5] <= BCD_7SEG_F:inst4.SEG_F
+HEXOUT[6] <= BCD_7SEG_G:inst5.SEG_G
+b3 => BCD_7Seg_A:inst.b3
+b3 => BCD_7SEG_B:inst2.b3
+b3 => BCD_7Seg_C:inst1.b3
+b3 => BCD_7SEG_D:inst8.b3
+b3 => BCD_7SEG_E:inst3.b2
+b3 => BCD_7SEG_F:inst4.b3
+b3 => BCD_7SEG_G:inst5.b3
+b2 => BCD_7Seg_A:inst.b2
+b2 => BCD_7SEG_B:inst2.b2
+b2 => BCD_7Seg_C:inst1.b2
+b2 => BCD_7SEG_D:inst8.b2
+b2 => BCD_7SEG_E:inst3.b0
+b2 => BCD_7SEG_F:inst4.b2
+b2 => BCD_7SEG_G:inst5.b2
+b1 => BCD_7Seg_A:inst.b1
+b1 => BCD_7SEG_B:inst2.b1
+b1 => BCD_7Seg_C:inst1.b1
+b1 => BCD_7SEG_D:inst8.b1
+b1 => BCD_7SEG_E:inst3.b1
+b1 => BCD_7SEG_F:inst4.b1
+b1 => BCD_7SEG_G:inst5.b1
+b0 => BCD_7Seg_A:inst.b0
+b0 => BCD_7SEG_B:inst2.b0
+b0 => BCD_7Seg_C:inst1.b0
+b0 => BCD_7SEG_D:inst8.b0
+b0 => BCD_7SEG_E:inst3.b3
+b0 => BCD_7SEG_F:inst4.b0
+b0 => BCD_7SEG_G:inst5.b0
+
+
+|Lab1|BCD_7SEG:inst|BCD_7Seg_A:inst
+Seg-A <= inst.DB_MAX_OUTPUT_PORT_TYPE
+b3 => inst.IN0
+b1 => inst.IN1
+b2 => inst4.IN0
+b2 => inst3.IN0
+b0 => inst5.IN0
+b0 => inst3.IN1
+
+
+|Lab1|BCD_7SEG:inst|BCD_7SEG_B:inst2
+SEG-B <= inst.DB_MAX_OUTPUT_PORT_TYPE
+b3 => inst.IN0
+b3 => inst3.IN0
+b1 => inst6.IN0
+b1 => inst4.IN0
+b0 => inst6.IN1
+b0 => inst9.IN0
+b2 => inst5.IN0
+
+
+|Lab1|BCD_7SEG:inst|BCD_7Seg_C:inst1
+Seg-C <= inst0.DB_MAX_OUTPUT_PORT_TYPE
+b1 => inst.IN0
+b0 => inst0.IN1
+b2 => inst0.IN2
+b3 => ~NO_FANOUT~
+
+
+|Lab1|BCD_7SEG:inst|BCD_7SEG_D:inst8
+SEG_D <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+b1 => inst8.IN0
+b1 => inst10.IN1
+b1 => inst2.IN0
+b0 => inst4.IN0
+b0 => inst9.IN2
+b2 => inst3.IN0
+b2 => inst9.IN0
+b3 => inst7.IN2
+
+
+|Lab1|BCD_7SEG:inst|BCD_7SEG_E:inst3
+SEGE <= inst.DB_MAX_OUTPUT_PORT_TYPE
+b1 => inst2.IN0
+b0 => inst1.IN0
+b2 => inst4.IN0
+b3 => ~NO_FANOUT~
+
+
+|Lab1|BCD_7SEG:inst|BCD_7SEG_F:inst4
+SEG_F <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+b3 => inst5.IN0
+b2 => inst1.IN0
+b2 => inst2.IN1
+b1 => inst3.IN0
+b0 => inst4.IN0
+
+
+|Lab1|BCD_7SEG:inst|BCD_7SEG_G:inst5
+SEG_G <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+b3 => inst3.IN0
+b1 => inst.IN0
+b1 => inst5.IN0
+b1 => inst1.IN0
+b2 => inst6.IN0
+b2 => inst2.IN1
+b0 => inst4.IN0
+
+
