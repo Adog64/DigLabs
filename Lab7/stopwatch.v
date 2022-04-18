@@ -104,10 +104,10 @@ module t_flip_flop(input clk, input rst, input t, output reg q);
     always @ (posedge clk) begin  
         if (rst)
             q <= 0;
-        else if (t & ~hit) begin
+        else if (~t & ~hit) begin
             q <= ~q;
             hit <= 1;
-        end else if (~t)
+        end else if (t)
             hit <= 0;
     end  
 endmodule

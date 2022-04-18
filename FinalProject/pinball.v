@@ -1,5 +1,7 @@
 module pinball(input [1:0]KEY, input MAX10_CLK1_50, output [7:0]HEX0, output [7:0]HEX1, output [7:0]HEX2, output [7:0]HEX3, output [7:0]HEX4);
     reg [15:0]score = 0;
+    reg [2:0]lives = 2'b11;
+    
     wire [3:0]tenthous;
     wire [3:0]thous;
     wire [3:0]huns;
@@ -118,14 +120,18 @@ module dec_to_7_seg(clk, dec, dot, segs);
     end
 endmodule
 
-module re_monostable(input clk, input btn, output reg tick);
+// send a one tick pulse on the rising edge of the input
+module re_monostable(input clk, input line_in, output reg tick);
     reg clicked = 0;
     always @(posedge clk) begin
+        // set wire to 0
         tick = 0;
-        if (btn & ~clicked) begin
+        // turn on wire when pressed
+        if (~line_in & ~clicked) begin
             clicked = 1;
             tick = 1;
-        end else if (~btn & clicked)
+        // reset when press is over
+        end else if (line_in & clicked)
             clicked = 0;
     end
 endmodule
