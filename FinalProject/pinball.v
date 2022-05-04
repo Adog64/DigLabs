@@ -1,6 +1,5 @@
 module pinball(input [1:0]KEY, input MAX10_CLK1_50, output [7:0]HEX0, output [7:0]HEX1, output [7:0]HEX2, output [7:0]HEX3, output [7:0]HEX4);
     reg [15:0]score = 0;
-    reg [2:0]lives = 2'b11;
     
     wire [3:0]tenthous;
     wire [3:0]thous;
@@ -9,8 +8,8 @@ module pinball(input [1:0]KEY, input MAX10_CLK1_50, output [7:0]HEX0, output [7:
     wire [3:0]ones;
 
     wire tick;
-    wire rst;
-
+    wire new_game;
+    wire bumber_hit;
     // convert score to BCD
     BCD score_con(.bin(score), .tth(tenthous), .tho(thous), .hun(huns), .ten(tens), .one(ones));
 
@@ -21,18 +20,14 @@ module pinball(input [1:0]KEY, input MAX10_CLK1_50, output [7:0]HEX0, output [7:
     dec_to_7_seg (.clk(MAX10_CLK1_50), .dec(tens), .dot(0), .segs(HEX1));
     dec_to_7_seg (.clk(MAX10_CLK1_50), .dec(ones), .dot(0), .segs(HEX0));
 
-    re_monostable inc_pulser (.clk(MAX10_CLK1_50), .btn(KEY[0]), .tick(tick));
-    re_monostable reset_pulser (.clk(MAX10_CLK1_50), .btn(KEY[1]), .tick(rst));
+    re_monostable reset_pulser (.clk(MAX10_CLK1_50), .line_in(KEY[1]), .tick(new_game));
+    re_monostable scoring (.clk(MAX10_CLK1_50), .line_in(KEY[0]), .tick(bumber_hit));
 
-    always @(MAX10_CLK1_50) begin
-        if (rst) begin
+    always @(posedge MAX10_CLK1_50) begin
+        if (new_game)
             score = 0;
-        end else if (tick) begin
-            if (score < 65536 - 100)
-                score = score + 100;
-            else
-                score = 0;
-        end
+        if (bumber_hit)
+            score = score + 100;
     end
 endmodule
 
@@ -134,4 +129,18 @@ module re_monostable(input clk, input line_in, output reg tick);
         end else if (line_in & clicked)
             clicked = 0;
     end
+endmodule
+
+// toggleable signal from pulsed input
+module t_flip_flop(input clk, input rst, input t, output reg q);
+    reg hit = 0;
+    always @ (posedge clk) begin  
+        if (rst)
+            q <= 0;
+        else if (t & ~hit) begin
+            q <= ~q;
+            hit <= 1;
+        end else if (~t)
+            hit <= 0;
+    end  
 endmodule

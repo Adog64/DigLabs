@@ -363,19 +363,19 @@ segs[6] <= segs[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
 segs[7] <= segs[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pinball|re_monostable:inc_pulser
-clk => clicked.CLK
-clk => tick~reg0.CLK
-btn => always0.IN1
-btn => always0.IN1
-tick <= tick~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |pinball|re_monostable:reset_pulser
 clk => clicked.CLK
 clk => tick~reg0.CLK
-btn => always0.IN1
-btn => always0.IN1
+line_in => always0.IN1
+line_in => always0.IN1
+tick <= tick~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pinball|re_monostable:scoring
+clk => clicked.CLK
+clk => tick~reg0.CLK
+line_in => always0.IN1
+line_in => always0.IN1
 tick <= tick~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
